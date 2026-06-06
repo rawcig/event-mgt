@@ -142,7 +142,7 @@ class Event extends Model
     public function getRegistrationTrendAttribute()
     {
         return $this->guests()
-            ->selectRaw('DATE(created_at) as date, COUNT(*) as count')
+            ->selectRaw("CAST(created_at AS DATE) as date, COUNT(*) as count")
             ->groupBy('date')
             ->orderBy('date', 'asc')
             ->get();

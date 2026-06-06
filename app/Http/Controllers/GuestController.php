@@ -67,14 +67,22 @@ class GuestController extends Controller
                 break;
         }
         
+        // Get statistics in a single query (fix N+1 problem)
+        $statsQuery = (clone $query)->selectRaw("
+            COUNT(*) as total,
+            SUM(CASE WHEN status = 'confirmed' THEN 1 ELSE 0 END) as confirmed,
+            SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) as pending,
+            SUM(CASE WHEN checked_in = true THEN 1 ELSE 0 END) as attended
+        ")->first();
+        
         $guests = $query->paginate(20);
         $events = Event::where('status', 'published')->get();
         
         // Statistics
-        $totalGuests = $query->count();
-        $confirmedGuests = (clone $query)->where('status', 'confirmed')->count();
-        $pendingGuests = (clone $query)->where('status', 'pending')->count();
-        $attendedGuests = (clone $query)->where('checked_in', true)->count();
+        $totalGuests = $statsQuery->total ?? 0;
+        $confirmedGuests = $statsQuery->confirmed ?? 0;
+        $pendingGuests = $statsQuery->pending ?? 0;
+        $attendedGuests = $statsQuery->attended ?? 0;
         
         return view('backend.pages.guests.index', compact('guests', 'events', 'totalGuests', 'confirmedGuests', 'pendingGuests', 'attendedGuests'));
     }

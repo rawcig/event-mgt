@@ -28,7 +28,7 @@ class ReportController extends Controller
             ->toArray();
         
         // Events by Month (Current Year)
-        $eventsByMonth = Event::selectRaw('MONTH(date) as month, COUNT(*) as count')
+        $eventsByMonth = Event::selectRaw("EXTRACT(MONTH FROM date)::int as month, COUNT(*) as count")
             ->whereYear('date', date('Y'))
             ->groupBy('month')
             ->orderBy('month')

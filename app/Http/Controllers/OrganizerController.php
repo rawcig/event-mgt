@@ -38,7 +38,7 @@ class OrganizerController extends Controller
         // handle logo upload
         if ($request->hasFile('logo')) {
             $image = $request->file('logo');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imageName = uniqid('logo_') . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('storage/organizers'), $imageName);
             $validatedData['logo'] = 'organizers/' . $imageName;
         }
@@ -87,7 +87,7 @@ class OrganizerController extends Controller
             
             // upload new logo
             $image = $request->file('logo');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imageName = uniqid('logo_') . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('storage/organizers'), $imageName);
             $validatedData['logo'] = 'organizers/' . $imageName;
         }

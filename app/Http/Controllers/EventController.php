@@ -81,7 +81,7 @@ class EventController extends Controller
         // handle cover image upload
         if ($request->hasFile('cover_image')) {
             $image = $request->file('cover_image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imageName = uniqid('cover_') . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('storage/events'), $imageName);
             $validatedData['cover_image'] = 'events/' . $imageName;
         }
@@ -89,7 +89,7 @@ class EventController extends Controller
         // handle detail image upload
         if ($request->hasFile('detail_image')) {
             $image = $request->file('detail_image');
-            $imageName = time() . '_detail.' . $image->getClientOriginalExtension();
+            $imageName = uniqid('detail_') . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('storage/events'), $imageName);
             $validatedData['detail_image'] = 'events/' . $imageName;
         }
