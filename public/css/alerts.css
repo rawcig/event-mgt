@@ -85,3 +85,18 @@
     padding: 10px 25px !important;
     font-weight: 600 !important;
 }
+
+/* Responsive Sweet Alert Buttons */
+@media (max-width: 767px) {
+    .swal2-confirm, .swal2-cancel {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+        width: 100% !important;
+        margin: 5px 0 !important;
+    }
+    .swal2-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+}
+

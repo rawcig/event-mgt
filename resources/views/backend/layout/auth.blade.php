@@ -20,14 +20,14 @@
                                     <div class="brand-logo">
                                         <a href="{{ route('home') }}">G8 Events</a>
                                     </div>
-                                    <h3 class="welcome-title">@yield('welcome-title', 'Welcome to Event Management')</h3>
+                                    <h3 style="padding: 0 0 20px 0;" class="welcome-title">@yield('welcome-title', 'Welcome to Event Management')</h3>
                                     @yield('welcome-content')
                                     <div class="intro-social">
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href="https://www.facebook.com/rawcig"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="https://github.com/rawcig"><i class="fa fa-github"></i></a></li>
+                                            <li><a href="https://t.me/rawcig"><i class="fa fa-telegram"></i></a></li>
+                                            <li><a href="https://www.outlook.com/sokdara.work@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
