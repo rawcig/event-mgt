@@ -48,3 +48,6 @@ Thumbs.db
 Q&A.html
 Dockerfile.bak
 Dockerfile-deploy.bak
+Dockerfile-deploy-production.bak
+postgres-supabase-schema.sql
+improvemen.txt

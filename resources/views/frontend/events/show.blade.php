@@ -129,10 +129,10 @@
                     <div class="card-body">
                         <div class="row">
                             @foreach($relatedEvents as $relatedEvent)
-                                <div class="col-md-6 mb-3">
+                                <div class="col-12 col-md-6 mb-3">
                                     <div class="card h-100">
                                         <div class="event-image-container-small" data-image="{{ $relatedEvent->cover_image ? asset('storage/' . $relatedEvent->cover_image) : asset('images/placeholder-event.svg') }}">
-                                    <img class="card-img-top img-fluid" src="{{ $relatedEvent->cover_image ? asset('storage/' . $relatedEvent->cover_image) : asset('images/placeholder-event.svg') }}" 
+                                    <img class="card-img-top img-fluid" src="{{ $relatedEvent->cover_image ? asset('storage/' . $relatedEvent->cover_image) : asset('images/placeholder-event.svg') }}"
                                          alt="{{ $relatedEvent->title }}" style="height: 150px; object-fit: contain; width: 100%; position: relative; z-index: 1;">
                                 </div>
                                         <div class="card-body p-3">
@@ -168,7 +168,7 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 event-detail-sidebar">
             <!-- Registration Card -->
             <div class="card mb-4">
                 <div class="card-header text-white">

@@ -14494,3 +14494,465 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="overlay"] .content-body {
   padding-left: 20px;
 }
 
+/* ====================================================================
+   Global Mobile-First Responsive Improvements
+   ==================================================================== */
+
+/* Ensure no horizontal scroll on any device */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Mobile-only logo on auth pages */
+.auth-mobile-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #9E6DE0;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+.auth-form-mobile-header {
+  display: block;
+  padding-top: 5px;
+}
+
+/* Auth form responsive padding and typography */
+@media (max-width: 1199.98px) {
+  .auth-form {
+    padding: 35px 30px;
+  }
+  .auth-form h4 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .auth-form {
+    padding: 25px 18px;
+  }
+  .auth-form h4 {
+    font-size: 1.05rem;
+    margin-bottom: 1rem !important;
+  }
+  .auth-form .form-group {
+    margin-bottom: 0.85rem;
+  }
+  .auth-form .form-control {
+    height: 44px;
+    font-size: 0.9rem;
+  }
+  .auth-form .btn {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+  .authincation .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .authincation-content {
+    border-radius: 12px !important;
+  }
+  .new-account p {
+    font-size: 0.85rem;
+  }
+  .auth-options {
+    font-size: 0.85rem;
+  }
+}
+
+/* Make welcome content hide on tablets and below */
+@media (max-width: 1199.98px) {
+  .welcome-content {
+    display: none !important;
+  }
+}
+
+/* Header / Navbar fixes */
+@media (max-width: 767.98px) {
+  .header-content {
+    padding: 0 10px;
+  }
+  .header-content .navbar {
+    padding: 0;
+  }
+  .navbar-nav.header-right {
+    margin-left: auto;
+  }
+  .header-right .nav-item .create-event-btn {
+    display: none;
+  }
+  .header-right .nav-item:first-child {
+    display: none;
+  }
+  .header-left {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header .navbar-nav .nav-item .nav-link {
+    padding: 0 6px;
+  }
+  .header .navbar-nav .nav-item .nav-link i.mdi {
+    font-size: 18px;
+  }
+  .header .dropdown-menu {
+    position: absolute !important;
+    right: 0;
+    left: auto;
+    min-width: 240px;
+  }
+  .header-profile img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Page title / breadcrumb mobile fixes */
+@media (max-width: 767.98px) {
+  .page-titles {
+    margin-bottom: 15px;
+  }
+  .page-titles .breadcrumb-range-picker {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .page-titles .breadcrumb {
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+  }
+  .page-titles .breadcrumb-item + .breadcrumb-item::before {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .page-titles .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .page-titles .breadcrumb {
+    justify-content: flex-start !important;
+  }
+}
+
+/* Card responsive padding */
+@media (max-width: 575.98px) {
+  .card-body {
+    padding: 1rem 0.85rem;
+  }
+  .card-header {
+    padding: 0.85rem 1rem;
+  }
+  .card-header h4,
+  .card-header h5 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Statistics cards mobile */
+@media (max-width: 575.98px) {
+  .stat-widget-one .card-body {
+    padding: 1rem;
+  }
+  .stat-widget-one h3 {
+    font-size: 1.4rem;
+  }
+  .icon-box-soft-info,
+  .icon-box-soft-success,
+  .icon-box-soft-warning,
+  .icon-box-soft-danger {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+}
+
+/* Welcome card on dashboard - mobile fixes */
+@media (max-width: 767.98px) {
+  .welcome-card .card-body {
+    padding: 1.25rem !important;
+  }
+  .welcome-card h2 {
+    font-size: 1.25rem;
+  }
+  .welcome-card h2 .mdi {
+    font-size: 1.3rem;
+  }
+  .welcome-card .opacity-8 {
+    font-size: 0.8rem;
+  }
+  .welcome-card .badge {
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .welcome-card .ml-2.font-weight-medium {
+    display: block;
+    margin-left: 0 !important;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .welcome-card h2 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Quick action buttons on dashboard */
+@media (max-width: 767.98px) {
+  .quick-actions-row .col-md-2,
+  .quick-actions-row .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .quick-actions-row .col-md-2,
+  .quick-actions-row .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .quick-actions-row .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
+}
+
+/* List group items - mobile */
+@media (max-width: 575.98px) {
+  .list-group-item {
+    padding: 0.85rem 1rem !important;
+  }
+  .list-group-item h6 {
+    font-size: 0.9rem;
+  }
+  .list-group-item p {
+    font-size: 0.78rem;
+  }
+}
+
+/* Responsive tables: convert to card view on small screens */
+@media (max-width: 767.98px) {
+  .table-responsive-cards thead {
+    display: none;
+  }
+  .table-responsive-cards,
+  .table-responsive-cards tbody,
+  .table-responsive-cards tr,
+  .table-responsive-cards td {
+    display: block;
+    width: 100%;
+  }
+  .table-responsive-cards tr {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    margin-bottom: 12px;
+    padding: 10px 12px;
+  }
+  .table-responsive-cards td {
+    padding: 6px 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  .table-responsive-cards td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    text-align: left;
+    flex: 0 0 auto;
+  }
+  .table-responsive-cards td[data-hide="mobile"] {
+    display: none;
+  }
+}
+
+/* Event image containers on mobile */
+@media (max-width: 575.98px) {
+  .event-image-container {
+    height: 220px !important;
+  }
+  .event-image-container-list {
+    height: 180px !important;
+  }
+}
+
+/* Event detail card mobile */
+@media (max-width: 767.98px) {
+  .event-image-container {
+    height: 240px !important;
+  }
+}
+
+/* Form rows responsive fixes */
+@media (max-width: 767.98px) {
+  .form-row > .form-group,
+  .form-row > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0.85rem;
+  }
+  .form-row {
+    display: block;
+  }
+  .form-row > .form-group.col-md-6,
+  .form-row > .form-group.col-md-4,
+  .form-row > .form-group.col-md-3,
+  .form-row > .form-group.col-md-2,
+  .form-row > .form-group.col-md-1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Modal responsive */
+@media (max-width: 575.98px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  .modal-content {
+    border-radius: 10px;
+  }
+  .modal-header,
+  .modal-footer {
+    padding: 0.85rem 1rem;
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Footer responsive */
+@media (max-width: 575.98px) {
+  .footer {
+    padding: 12px 15px;
+  }
+  .footer .copyright p {
+    font-size: 0.78rem;
+    text-align: center;
+  }
+}
+
+/* Sidebar / Quixnav mobile improvements */
+@media (max-width: 767.98px) {
+  .quixnav {
+    left: -250px;
+    transition: left 0.3s ease;
+  }
+  body.menu-open .quixnav {
+    left: 0;
+  }
+}
+
+/* Image responsive globally */
+img.img-fluid,
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow on long email / titles */
+.text-truncate-mobile {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Tighter heading sizes on small screens for readability */
+@media (max-width: 575.98px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.15rem; }
+  h4 { font-size: 1.05rem; }
+  h5 { font-size: 0.95rem; }
+  h6 { font-size: 0.85rem; }
+}
+
+/* Container fluid padding adjustment on mobile */
+@media (max-width: 575.98px) {
+  .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .content-body {
+    padding: 15px 0;
+  }
+}
+
+/* Make sure card body p-0 does not cause horizontal overflow on mobile */
+@media (max-width: 575.98px) {
+  .list-group-flush {
+    margin: 0 -5px;
+  }
+}
+
+/* Event show sidebar stacking */
+@media (max-width: 991.98px) {
+  .event-detail-sidebar {
+    margin-top: 1rem;
+  }
+}
+
+/* Touch targets at least 44px on mobile */
+@media (max-width: 767.98px) {
+  .btn {
+    min-height: 38px;
+  }
+  .btn-sm {
+    min-height: 32px;
+  }
+  .form-control,
+  .form-select {
+    font-size: 16px; /* prevent iOS zoom on focus */
+  }
+}
+
+/* QR Modal image */
+@media (max-width: 575.98px) {
+  .modal-body img.img-fluid[alt="QR Code"] {
+    max-width: 200px !important;
+  }
+}
+
+/* Responsive text alignment helper */
+@media (max-width: 767.98px) {
+  .text-left-mobile {
+    text-align: left !important;
+  }
+  .table-responsive-cards td .d-flex {
+    justify-content: flex-end;
+  }
+  .table-responsive-cards td[data-label="Time"] .d-block,
+  .table-responsive-cards td[data-label="Time"] small {
+    text-align: right;
+  }
+}
+
+/* Ensure form-row children stack on mobile */
+@media (max-width: 575.98px) {
+  .form-row > .col,
+  .form-row > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0.85rem;
+  }
+  .form-row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+

@@ -61,31 +61,31 @@
             <div class="card">
                 <div class="card-body">
                     <form action="{{ route('events.public') }}" method="GET" class="row align-items-end">
-                        <div class="col-md-4">
+                        <div class="col-12 col-md-4 mb-2 mb-md-0">
                             <label class="form-label">Search Events</label>
-                            <input type="text" name="search" class="form-control" 
+                            <input type="text" name="search" class="form-control"
                                    placeholder="Search by title..." value="{{ request('search') }}">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3 mb-2 mb-md-0">
                             <label class="form-label">Location</label>
-                            <input type="text" name="location" class="form-control" 
+                            <input type="text" name="location" class="form-control"
                                    placeholder="Filter by location..." value="{{ request('location') }}">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-6 col-md-2 mb-2 mb-md-0">
                             <label class="form-label">Sort By</label>
                             <select name="sort" class="form-control">
                                 <option value="date" {{ request('sort') == 'date' ? 'selected' : '' }}>Date</option>
                                 <option value="title" {{ request('sort') == 'title' ? 'selected' : '' }}>Title</option>
                             </select>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-6 col-md-2 mb-2 mb-md-0">
                             <label class="form-label">Order</label>
                             <select name="direction" class="form-control">
                                 <option value="asc" {{ request('direction') == 'asc' ? 'selected' : '' }}>Ascending</option>
                                 <option value="desc" {{ request('direction') == 'desc' ? 'selected' : '' }}>Descending</option>
                             </select>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-12 col-md-1 mb-2 mb-md-0">
                             <button type="submit" class="btn btn-primary btn-block">
                                 <i class="mdi mdi-filter"></i>
                             </button>

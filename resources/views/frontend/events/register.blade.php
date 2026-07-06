@@ -119,8 +119,8 @@
                             @enderror
                         </div>
 
-                        <div class="form-group mt-4">
-                            <button type="submit" class="btn btn-secondary text-white">
+                        <div class="form-group mt-4 d-flex flex-column flex-sm-row">
+                            <button type="submit" class="btn btn-secondary text-white mb-2 mb-sm-0 mr-sm-2">
                                 <i class="mdi mdi-check"></i> Complete Registration
                             </button>
                             <a href="{{ route('events.show.public', $event) }}" class="btn btn-danger text-white">
@@ -132,7 +132,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 event-detail-sidebar">
             <div class="card">
                 <div class="card-header">
                     <h5 class="mb-0">Event Information</h5>

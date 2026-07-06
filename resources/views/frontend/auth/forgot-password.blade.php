@@ -3,24 +3,30 @@
 @section('welcome-title', 'Reset Password')
 
 @section('welcome-content')
-<p class="text-muted">Enter your email and we'll send you a reset link.</p>
+<p>Enter your email and we'll send you a reset link.</p>
 @endsection
 
 @section('auth-form')
 <div class="auth-form">
     <h4 class="text-center mb-4">Reset Password</h4>
-    
+
     @if(session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
     @endif
 
-    {{-- <form action="{{ route('password.email') }}" method="POST"> --}}
+    @if($errors->has('email'))
+        <div class="alert alert-danger">
+            {{ $errors->first('email') }}
+        </div>
+    @endif
+
+    <form action="{{ route('password.email') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label><strong>Email</strong></label>
-            <input type="email" class="form-control @error('email') is-invalid @enderror" 
+            <label for="forgot-email" class="font-weight-bold">Email</label>
+            <input type="email" id="forgot-email" class="form-control @error('email') is-invalid @enderror"
                    name="email" value="{{ old('email') }}" placeholder="Enter your email" required>
             @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>

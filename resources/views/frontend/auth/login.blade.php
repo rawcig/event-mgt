@@ -27,29 +27,27 @@
     <form action="{{ route('login') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label><strong>Email</strong></label>
-            <input type="email" class="form-control @error('email') is-invalid @enderror" 
+            <label for="email" class="font-weight-bold">Email</label>
+            <input type="email" id="email" class="form-control @error('email') is-invalid @enderror"
                    name="email" value="{{ old('email') }}" placeholder="Enter your email" required autofocus>
             @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
-            <label><strong>Password</strong></label>
-            <input type="password" class="form-control @error('password') is-invalid @enderror" 
+            <label for="password" class="font-weight-bold">Password</label>
+            <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
                    name="password" placeholder="Enter your password" required>
             @error('password')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-        <div class="form-row d-flex justify-content-between mt-4 mb-2">
-            <div class="form-group">
-                <div class="form-check ml-2">
-                    <input class="form-check-input" type="checkbox" id="remember" name="remember">
-                    <label class="form-check-label" for="remember">Remember me</label>
-                </div>
+        <div class="auth-options d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mt-4 mb-3">
+            <div class="form-check mb-2 mb-sm-0">
+                <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                <label class="form-check-label" for="remember">Remember me</label>
             </div>
-            <div class="form-group">
+            <div>
                 <a href="{{ route('password.request') }}">Forgot Password?</a>
             </div>
         </div>
