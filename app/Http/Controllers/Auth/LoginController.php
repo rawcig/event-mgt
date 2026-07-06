@@ -27,6 +27,11 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
+        // redirect if already logged in (safety check)
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -42,7 +47,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             
             $user = Auth::user();
-            return redirect()->intended(route('home'))
+            return redirect()->route('home')
                 ->with('success', "welcome back, {$user->name}!");
         }
 
